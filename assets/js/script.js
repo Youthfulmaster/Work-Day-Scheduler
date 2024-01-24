@@ -31,8 +31,16 @@ $(function () {
               $(this).addClass("future");
           }
       });
-    // TODO: Add code to get any user input that was saved in localStorage and set
-    // the values of the corresponding textarea elements.
+     // Loop through each time-block to load user input from local storage.
+     $(".time-block").each(function() {
+        var timeBlockId = $(this).attr("id");
+        var savedUserInput = localStorage.getItem(timeBlockId);
+        
+        // Set the textarea value with the saved user input (if any).
+        if (savedUserInput !== null) {
+            $(this).find("textarea").val(savedUserInput);
+        }
+    });
     
     // TODO: Add code to display the current date in the header of the page.
   });
