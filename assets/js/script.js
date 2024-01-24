@@ -42,5 +42,8 @@ $(function () {
         }
     });
     
-    // TODO: Add code to display the current date in the header of the page.
-  });
+    // Get the current date using Day.js and display it in the header.
+    var currentDate = dayjs().format("dddd, MMMM D, YYYY");
+    $("#currentDay").text(currentDate);
+});
+ 
